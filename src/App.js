@@ -7,7 +7,7 @@ function App() {
   const [contacts, setContacts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
-// Fetching contact data from the provided API
+  // Fetching contact data from the provided API
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
@@ -23,10 +23,12 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+
+      <main>
         <h1>Contacts</h1>
         <input
           type="text"
+        
           placeholder="Search contacts..."
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}  // Filtering contacts based on search term
@@ -41,7 +43,7 @@ function App() {
             </li>
           ))}
         </ul>
-      </header>
+      </main>
     </div>
   );
 }

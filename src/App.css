@@ -18,30 +18,26 @@ body, html {
   padding: 20px;
 }
 
-.App-header {
-  margin: 0 auto;
+
+main{
+  margin: 20px auto;
   padding: 20px;
   max-width: 800px;
   background-color: #d0d2ee;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border-radius: 10px;
 }
-
 input[type="text"] {
   padding: 10px;
   width: 80%;
   max-width: 500px;
   margin-bottom: 20px;
   border: 2px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 16px;
   transition: border-color 0.3s;
 }
 
-input[type="text"]:focus {
-  border-color: #0056b3;
-  outline: none;
-}
 
 ul {
   list-style: none;
@@ -75,4 +71,8 @@ h2 {
 p {
   font-size: 16px;
   color: #666;
+}
+main h1 {
+  border-bottom: 2px solid #7741b6;  
+  padding-bottom: 10px;  
 }
