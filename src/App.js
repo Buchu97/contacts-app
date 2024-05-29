@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+// Main App component
 function App() {
+  // Creating State for storing data
   const [contacts, setContacts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
+// Fetching contact data from the provided API
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
@@ -12,6 +15,8 @@ function App() {
       .catch(err => console.error('Error fetching contacts:', err));
   }, []);
 
+
+  // Filtering contacts based on search term
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -24,7 +29,7 @@ function App() {
           type="text"
           placeholder="Search contacts..."
           value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
+          onChange={e => setSearchTerm(e.target.value)}  // Filtering contacts based on search term
           style={{ padding: '10px', margin: '20px', width: '300px' }}
         />
         <ul>
@@ -41,4 +46,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; // Exports App
